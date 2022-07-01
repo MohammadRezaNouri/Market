@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+project(Market)
+set(CMAKE_CXX_STANDARD 11)
+include_directories(include)
+add_executable(app src/main.cpp src/good.cpp src/date.cpp src/buy.cpp src/sold.cpp)
