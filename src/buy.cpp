@@ -1,4 +1,4 @@
-#include "Buy.h"
+#include "buy.h"
 
 #include <fstream>
 #include <iomanip>

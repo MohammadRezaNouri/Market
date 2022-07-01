@@ -1,9 +1,9 @@
 #ifndef GOOD_H
 #define GOOD_H
 
-#include "Date.h"
-#include "Sold.h"
-#include "Buy.h"
+#include "date.h"
+#include "sold.h"
+#include "buy.h"
 
 #include <vector>
 

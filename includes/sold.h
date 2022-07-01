@@ -1,7 +1,7 @@
 #ifndef SOLD_H
 #define SOLD_H
 
-#include "Date.h"
+#include "date.h"
 #include "good.h"
 
 #include <vector>

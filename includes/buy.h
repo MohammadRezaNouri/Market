@@ -1,7 +1,7 @@
 #ifndef BUY_H
 #define BUY_H
 
-#include "Date.h"
+#include "date.h"
 #include "good.h"
 
 class Buy
