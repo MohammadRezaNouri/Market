@@ -12,7 +12,7 @@ void print8(good Good[], int i, int j)
     Bill.open("Bill.txt", ios::app);
     if (Bill.fail())
     {
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Bill.txt file was not opened." << endl;
         cout << "********************" << endl;
@@ -66,7 +66,7 @@ Loop:
     cout << "Exit = 0" << endl;
     cout << "Please enter the number : ";
     cin >> temp;
-    system("clear");
+    system("clear || cls");
     if (temp == 1)
     {
     temp1:
@@ -74,18 +74,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp1;
         }
-        system("clear");
+        system("clear || cls");
         if (index > 899)
         {
             cout << "********************" << endl;
@@ -102,7 +102,7 @@ Loop:
         }
         catch (invalid_argument &equalProductID)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << equalProductID.what() << endl;
             cout << "********************" << endl;
@@ -120,13 +120,13 @@ Loop:
         }
         catch (invalid_argument &typeMaintenance)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << typeMaintenance.what() << endl;
             cout << "********************" << endl;
             goto TypeMaintenance;
         }
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -140,18 +140,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp2;
         }
-        system("clear");
+        system("clear || cls");
         cout << "Please enter the good name :" << endl;
         getchar();
         getline(cin, t1);
@@ -166,7 +166,7 @@ Loop:
                 soldRemove.open("Sold.dat");
                 if (soldRemove.fail())
                 {
-                    system("clear");
+                    system("clear || cls");
                     cout << "********************" << endl;
                     cout << "Sold.dat file was not opened." << endl;
                     cout << "********************" << endl;
@@ -176,7 +176,7 @@ Loop:
                 {
                     if (Good[i].getProductID() == stoi(t1.substr(15, 18)))
                     {
-                        system("clear");
+                        system("clear || cls");
                         cout << "********************" << endl;
                         cout << "This good has been sold, so it is not possible to remove it." << endl;
                         cout << "********************" << endl;
@@ -231,7 +231,7 @@ Loop:
                 remove("Buy.dat");
                 rename("temp.dat", "Buy.dat");
                 Good[i].buyPop();
-                system("clear");
+                system("clear || cls");
                 cout << "********************" << endl;
                 cout << "Done." << endl;
                 cout << "********************" << endl;
@@ -239,7 +239,7 @@ Loop:
             }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "We do not have such good." << endl;
             cout << "********************" << endl;
@@ -253,18 +253,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp3;
         }
-        system("clear");
+        system("clear || cls");
         Bool1 = 0;
         cout << "Please enter the name of the good you want to correction :" << endl;
         getchar();
@@ -280,7 +280,7 @@ Loop:
             }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this name." << endl;
             cout << "********************" << endl;
@@ -300,24 +300,24 @@ Loop:
             }
             catch (invalid_argument &equalName)
             {
-                system("clear");
+                system("clear || cls");
                 cout << "********************" << endl;
                 cerr << equalName.what() << endl;
                 cout << "********************" << endl;
                 goto Loop;
             }
             Bool1 = 1;
-            system("clear");
+            system("clear || cls");
         }
         else if (temp != 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto tempName;
         }
-        system("clear");
+        system("clear || cls");
     tempBrand:
         cout << "Do you want to correction the good brand?(Yes = 1, No = 0)" << endl;
         cin >> temp;
@@ -328,17 +328,17 @@ Loop:
             getline(cin, t1);
             Good[i].setBrand(t1);
             Bool1 = 1;
-            system("clear");
+            system("clear || cls");
         }
         else if (temp != 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto tempBrand;
         }
-        system("clear");
+        system("clear || cls");
     tempTypeMaintenance:
         cout << "Do you want to correction the type of maintenance good?(Yes = 1, No = 0)" << endl;
         cin >> temp;
@@ -348,11 +348,11 @@ Loop:
             cin >> temp;
             Good[i].setTypeMaintenance(temp - 1);
             Bool1 = 1;
-            system("clear");
+            system("clear || cls");
         }
         else if (temp != 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
@@ -366,7 +366,7 @@ Loop:
             for (i = 0; i < index; i++)
                 Good[i].saveData();
         }
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -379,18 +379,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp4;
         }
-        system("clear");
+        system("clear || cls");
         cout << "Please enter the name of the good whose information you want to View :" << endl;
         getchar();
         getline(cin, t1);
@@ -405,13 +405,13 @@ Loop:
             }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this name." << endl;
             cout << "********************" << endl;
             goto Loop;
         }
-        system("clear");
+        system("clear || cls");
     display:
         cout << "Good information :" << endl;
         cout << "Product ID : " << setw(5) << Good[i].getProductID() << endl;
@@ -450,7 +450,7 @@ Loop:
         cin >> temp;
         if (temp == 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Done." << endl;
             cout << "********************" << endl;
@@ -458,7 +458,7 @@ Loop:
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
@@ -472,18 +472,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp5;
         }
-        system("clear");
+        system("clear || cls");
         cout << "Please enter the full name of the good (or part of the good name) :" << endl;
         getchar();
         getline(cin, t1);
@@ -502,7 +502,7 @@ Loop:
             }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this name." << endl;
             cout << "********************" << endl;
@@ -510,7 +510,7 @@ Loop:
         }
         cout << "Press any key and enter to go to menu :" << endl;
         getchar();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -523,24 +523,24 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp6;
         }
-        system("clear");
+        system("clear || cls");
     ID6:
         cout << "Please enter the good product ID for buy :(100 - 999)" << endl;
         cin >> temp;
         if (temp < 100 || temp > 999)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Product ID is wrong.(100 - 999)" << endl;
             cout << "********************" << endl;
@@ -555,7 +555,7 @@ Loop:
             }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this name." << endl;
             cout << "********************" << endl;
@@ -574,7 +574,7 @@ Loop:
         }
         catch (invalid_argument &errBuy)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errBuy.what() << endl;
             cout << "********************" << endl;
@@ -607,7 +607,7 @@ Loop:
         }
         else
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
@@ -623,7 +623,7 @@ Loop:
         }
         catch (invalid_argument &errBuy)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errBuy.what() << endl;
             cout << "********************" << endl;
@@ -631,7 +631,7 @@ Loop:
         }
         Good[i].saveBuy();
         Good[i].buyPush();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -644,24 +644,24 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp7;
         }
-        system("clear");
+        system("clear || cls");
     ID7:
         cout << "Please enter the good product ID for buy :(100 - 999)" << endl;
         cin >> tmp2;
         if (tmp2 < 100 || tmp2 > 999)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Product ID is wrong.(100 - 999)" << endl;
             cout << "********************" << endl;
@@ -676,7 +676,7 @@ Loop:
             }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this product ID." << endl;
             cout << "********************" << endl;
@@ -693,7 +693,7 @@ Loop:
             cin >> tmp;
             if (tmp < 1000 || tmp > 9999)
             {
-                system("clear");
+                system("clear || cls");
                 cout << "********************" << endl;
                 cout << "Customer code is wrong.(1000 - 9999)" << endl;
                 cout << "********************" << endl;
@@ -707,7 +707,7 @@ Loop:
                 }
             if (temp3 == 0)
             {
-                system("clear");
+                system("clear || cls");
                 cout << "********************" << endl;
                 cout << "There is no customer with this customer code." << endl;
                 cout << "********************" << endl;
@@ -716,7 +716,7 @@ Loop:
         }
         else if (temp2 != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
@@ -726,7 +726,7 @@ Loop:
         checkBuy.open("Buy.dat");
         if (checkBuy.fail())
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Buy.dat file was not opened." << endl;
             cout << "********************" << endl;
@@ -751,7 +751,7 @@ Loop:
         checkBuy.close();
         if (Bool = 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Buy good first so you can sell." << endl;
             cout << "********************" << endl;
@@ -762,7 +762,7 @@ Loop:
         checkNumberBuy.open("Buy.dat");
         if (checkNumberBuy.fail())
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Buy.dat file was not opened." << endl;
             cout << "********************" << endl;
@@ -795,7 +795,7 @@ Loop:
         checkNumberSold.open("Sold.dat");
         if (checkNumberSold.fail())
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Sold.dat file was not opened." << endl;
             cout << "********************" << endl;
@@ -826,7 +826,7 @@ Loop:
         checkNumberBuy.close();
         if (Bool >= j)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "You have no inventory of this good." << endl;
             cout << "********************" << endl;
@@ -838,7 +838,7 @@ Loop:
         cin >> tmp;
         if (tmp > j)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "You have no inventory of this good." << endl;
             cout << "********************" << endl;
@@ -853,7 +853,7 @@ Loop:
         catch (invalid_argument &errSold)
         {
             // cout << "1" << endl;
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errSold.what() << endl;
             cout << "********************" << endl;
@@ -886,7 +886,7 @@ Loop:
         }
         else
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
@@ -894,7 +894,7 @@ Loop:
         }
         Good[i].saveSold();
         Good[i].soldPush();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -907,24 +907,24 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp8;
         }
-        system("clear");
+        system("clear || cls");
     Customer8:
         cout << "Please enter the customer code for view :(1000 - 9999)" << endl;
         cin >> tmp;
         if (tmp < 1000 || tmp > 9999)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Customer code is wrong.(1000 - 9999)" << endl;
             cout << "********************" << endl;
@@ -939,7 +939,7 @@ Loop:
             }
         if (Bool1 == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no customer with this customer code." << endl;
             cout << "********************" << endl;
@@ -955,7 +955,7 @@ Loop:
         }
         catch (invalid_argument &errDate)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errDate.what() << endl;
             cout << "********************" << endl;
@@ -970,7 +970,7 @@ Loop:
         }
         catch (invalid_argument &errDate1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errDate1.what() << endl;
             cout << "********************" << endl;
@@ -980,7 +980,7 @@ Loop:
         Bill.open("Bill.txt", ios::out);
         if (Bill.fail())
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Bill.txt file was not opened." << endl;
             cout << "********************" << endl;
@@ -1076,7 +1076,7 @@ Loop:
                         }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "This customer has not made a purchase in this historical period." << endl;
             cout << "********************" << endl;
@@ -1084,7 +1084,7 @@ Loop:
         }
         cout << "Press any key and enter to go to menu :" << endl;
         getchar();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -1097,18 +1097,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp9;
         }
-        system("clear");
+        system("clear || cls");
         cout << "Please enter the name of the good :" << endl;
         getchar();
         getline(cin, t1);
@@ -1128,7 +1128,7 @@ Loop:
                 }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this name." << endl;
             cout << "********************" << endl;
@@ -1136,7 +1136,7 @@ Loop:
         }
         cout << "Press any key and enter to go to menu :" << endl;
         getchar();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -1149,18 +1149,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp10;
         }
-        system("clear");
+        system("clear || cls");
         cout << "Please enter the name of the good :" << endl;
         getchar();
         getline(cin, t1);
@@ -1184,7 +1184,7 @@ Loop:
                 }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "There is no good with this name." << endl;
             cout << "********************" << endl;
@@ -1193,7 +1193,7 @@ Loop:
         cout << "Total money paid : " << setw(5) << temp2 << endl;
         cout << "Press any key and enter to go to menu :" << endl;
         getchar();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -1206,18 +1206,18 @@ Loop:
         cin >> temp;
         if (temp == 0)
         {
-            system("clear");
+            system("clear || cls");
             goto Loop;
         }
         else if (temp != 1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "Invalid value." << endl;
             cout << "********************" << endl;
             goto temp11;
         }
-        system("clear");
+        system("clear || cls");
     Fdate11:
         cout << "Please enter the initial date :(Example : 2020-01-22 19:43)" << endl;
         getchar();
@@ -1228,7 +1228,7 @@ Loop:
         }
         catch (invalid_argument &errDate)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errDate.what() << endl;
             cout << "********************" << endl;
@@ -1243,7 +1243,7 @@ Loop:
         }
         catch (invalid_argument &errDate1)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cerr << errDate1.what() << endl;
             cout << "********************" << endl;
@@ -1354,7 +1354,7 @@ Loop:
                     }
         if (Bool == 0)
         {
-            system("clear");
+            system("clear || cls");
             cout << "********************" << endl;
             cout << "You did not make a purchase during this time." << endl;
             cout << "********************" << endl;
@@ -1363,7 +1363,7 @@ Loop:
         cout << "Total money paid : " << setw(5) << temp2 << endl;
         cout << "Press any key and enter to go to menu :" << endl;
         getchar();
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Done." << endl;
         cout << "********************" << endl;
@@ -1371,13 +1371,13 @@ Loop:
     }
     else if (temp == 0)
     {
-        system("clear");
+        system("clear || cls");
         cout << "Bye Bye :)" << endl;
         return 0;
     }
     else
     {
-        system("clear");
+        system("clear || cls");
         cout << "********************" << endl;
         cout << "Invalid value." << endl;
         cout << "********************" << endl;
