@@ -43,6 +43,78 @@ void print11(good Good[], int i, int k)
 }
 int main()
 {
+    int logSel, logInsex = 0;
+    string loged[100], pass[100];
+    while (1)
+    {
+        cout << "login = 0" << endl
+             << "register = 1" << endl
+             << "exit = 2" << endl;
+        cin >> logSel;
+        string log_temp;
+        string pass_temp;
+        if (logSel == 0)
+        {
+            cout << "User : ";
+            cin >> log_temp;
+            cout << "password : ";
+            cin >> pass_temp;
+            int B = 0;
+            for (int i = 0; i < logInsex; i++)
+                if (log_temp == loged[i])
+                    if (pass_temp == pass[i])
+                    {
+                        system("clear || cls");
+                        cout << "********************" << endl;
+                        cout << "Login success" << endl;
+                        cout << "********************" << endl;
+                        B = 1;
+                        break;
+                    }
+                    else
+                    {
+                        system("clear || cls");
+                        cout << "********************" << endl;
+                        cout << "Login failed" << endl;
+                        cout << "********************" << endl;
+                        break;
+                    }
+                else
+                {
+                    system("clear || cls");
+                    cout << "********************" << endl;
+                    cout << "Login failed" << endl;
+                    cout << "********************" << endl;
+                    break;
+                }
+            if (B == 1)
+                break;
+        }
+        else if (logSel == 1)
+        {
+            cout << "User : ";
+            cin >> log_temp;
+            cout << "password : ";
+            cin >> pass_temp;
+            loged[logInsex] = log_temp;
+            pass[logInsex] = pass_temp;
+            logInsex++;
+            system("clear || cls");
+            cout << "********************" << endl;
+            cout << "Register success" << endl;
+            cout << "********************" << endl;
+        }
+        else if (logSel == 2)
+            return 0;
+        else
+        {
+            system("clear || cls");
+            cout << "********************" << endl;
+            cout << "Invalid input" << endl;
+            cout << "********************" << endl;
+        }
+    }
+
     float temp, temp1;
     good Good[900];
     string t1, t2, t3, t4;
@@ -1017,63 +1089,63 @@ Loop:
                             Bool = 1;
                             print8(Good, j, k);
                         }
-                    else if (Good[i].getGoodSold()[j].getDate().getYear() == tempDate.getYear() && Good[i].getGoodSold()[j].getDate().getYear() == tempDate1.getYear())
-                        if (Good[i].getGoodSold()[j].getDate().getMonth() > tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() <= tempDate1.getMonth())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() < tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() > tempDate.getDay())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() > tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() < tempDate1.getDay())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() > tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() <= tempDate1.getHour())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() > tempDate.getMinute() && Good[i].getGoodSold()[j].getDate().getMinute() < tempDate1.getMinute())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() > tempDate.getMinute() && Good[i].getGoodSold()[j].getDate().getMinute() < tempDate1.getMinute())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() == tempDate.getMinute() && Good[i].getGoodSold()[j].getDate().getMinute() == tempDate1.getMinute())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                    else if (Good[i].getGoodSold()[j].getDate().getYear() > tempDate.getYear() && Good[i].getGoodSold()[j].getDate().getYear() == tempDate1.getYear())
-                        if (Good[i].getGoodSold()[j].getDate().getMonth() < tempDate1.getMonth())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() < tempDate1.getDay())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() < tempDate1.getHour())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
-                        else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() <= tempDate1.getMinute())
-                        {
-                            Bool = 1;
-                            print8(Good, j, k);
-                        }
+                        else if (Good[i].getGoodSold()[j].getDate().getYear() == tempDate.getYear() && Good[i].getGoodSold()[j].getDate().getYear() == tempDate1.getYear())
+                            if (Good[i].getGoodSold()[j].getDate().getMonth() > tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() <= tempDate1.getMonth())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() < tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() > tempDate.getDay())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() > tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() < tempDate1.getDay())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() > tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() <= tempDate1.getHour())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() > tempDate.getMinute() && Good[i].getGoodSold()[j].getDate().getMinute() < tempDate1.getMinute())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() > tempDate.getMinute() && Good[i].getGoodSold()[j].getDate().getMinute() < tempDate1.getMinute())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate.getMonth() && Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate.getDay() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate.getHour() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() == tempDate.getMinute() && Good[i].getGoodSold()[j].getDate().getMinute() == tempDate1.getMinute())
+                            {
+                                Bool = 1;
+                                print8(Good, j, k);
+                            }
+                            else if (Good[i].getGoodSold()[j].getDate().getYear() > tempDate.getYear() && Good[i].getGoodSold()[j].getDate().getYear() == tempDate1.getYear())
+                                if (Good[i].getGoodSold()[j].getDate().getMonth() < tempDate1.getMonth())
+                                {
+                                    Bool = 1;
+                                    print8(Good, j, k);
+                                }
+                                else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() < tempDate1.getDay())
+                                {
+                                    Bool = 1;
+                                    print8(Good, j, k);
+                                }
+                                else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() < tempDate1.getHour())
+                                {
+                                    Bool = 1;
+                                    print8(Good, j, k);
+                                }
+                                else if (Good[i].getGoodSold()[j].getDate().getMonth() == tempDate1.getMonth() && Good[i].getGoodSold()[j].getDate().getDay() == tempDate1.getDay() && Good[i].getGoodSold()[j].getDate().getHour() == tempDate1.getHour() && Good[i].getGoodSold()[j].getDate().getMinute() <= tempDate1.getMinute())
+                                {
+                                    Bool = 1;
+                                    print8(Good, j, k);
+                                }
         if (Bool == 0)
         {
             system("clear || cls");
@@ -1284,74 +1356,74 @@ Loop:
                         temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
                         print11(Good, j, k);
                     }
-                else if (Good[j].getGoodBuy()[k].getPurchaseDate().getYear() == tempDate.getYear() && Good[j].getGoodBuy()[k].getPurchaseDate().getYear() == tempDate1.getYear())
-                    if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() > tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() <= tempDate1.getMonth())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() < tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() > tempDate.getDay())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() > tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() < tempDate1.getDay())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() > tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() <= tempDate1.getHour())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() > tempDate.getMinute() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() < tempDate1.getMinute())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() > tempDate.getMinute() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() < tempDate1.getMinute())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() == tempDate.getMinute() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() == tempDate1.getMinute())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                else if (Good[j].getGoodBuy()[k].getPurchaseDate().getYear() > tempDate.getYear() && Good[j].getGoodBuy()[k].getPurchaseDate().getYear() == tempDate1.getYear())
-                    if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() < tempDate1.getMonth())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() < tempDate1.getDay())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() < tempDate1.getHour())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
-                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() <= tempDate1.getMinute())
-                    {
-                        Bool = 1;
-                        temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
-                        print11(Good, j, k);
-                    }
+                    else if (Good[j].getGoodBuy()[k].getPurchaseDate().getYear() == tempDate.getYear() && Good[j].getGoodBuy()[k].getPurchaseDate().getYear() == tempDate1.getYear())
+                        if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() > tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() <= tempDate1.getMonth())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() < tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() > tempDate.getDay())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() > tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() < tempDate1.getDay())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() > tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() <= tempDate1.getHour())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() > tempDate.getMinute() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() < tempDate1.getMinute())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() > tempDate.getMinute() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() < tempDate1.getMinute())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() == tempDate.getMinute() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() == tempDate1.getMinute())
+                        {
+                            Bool = 1;
+                            temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                            print11(Good, j, k);
+                        }
+                        else if (Good[j].getGoodBuy()[k].getPurchaseDate().getYear() > tempDate.getYear() && Good[j].getGoodBuy()[k].getPurchaseDate().getYear() == tempDate1.getYear())
+                            if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() < tempDate1.getMonth())
+                            {
+                                Bool = 1;
+                                temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                                print11(Good, j, k);
+                            }
+                            else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() < tempDate1.getDay())
+                            {
+                                Bool = 1;
+                                temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                                print11(Good, j, k);
+                            }
+                            else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() < tempDate1.getHour())
+                            {
+                                Bool = 1;
+                                temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                                print11(Good, j, k);
+                            }
+                            else if (Good[j].getGoodBuy()[k].getPurchaseDate().getMonth() == tempDate1.getMonth() && Good[j].getGoodBuy()[k].getPurchaseDate().getDay() == tempDate1.getDay() && Good[j].getGoodBuy()[k].getPurchaseDate().getHour() == tempDate1.getHour() && Good[j].getGoodBuy()[k].getPurchaseDate().getMinute() <= tempDate1.getMinute())
+                            {
+                                Bool = 1;
+                                temp2 += Good[j].getGoodBuy()[k].getAmount() * Good[j].getGoodBuy()[k].getNumber();
+                                print11(Good, j, k);
+                            }
         if (Bool == 0)
         {
             system("clear || cls");
